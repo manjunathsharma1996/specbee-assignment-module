@@ -1,0 +1,6 @@
+name: 'Timezone'
+type: module
+description: 'A module to enable the Specbee assignment work on Timezone'
+package: Custom
+core_version_requirement: ^10
+configure: timezone.show_time_configuration

@@ -1,0 +1,31 @@
+<?php 
+use Drupal\block\Entity\Block;
+use Drupal\block\BlockManagerInterface;
+use Drupal\block\BlockRepositoryInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function timezone_theme($existing, $type, $theme, $path) {
+    return [
+      'show_time' => [
+        'variables' => ['time' => NULL],
+      ],
+    ];
+}
+
+function timezone_install() {
+  $values = array(
+    'id' => 'show_time_olivero_block',
+    'plugin' => 'show_time',
+    'region' => 'sidebar',
+    'settings' => array(
+      'label' => 'Show Time',
+    ),
+    'theme' => 'olivero',
+    'visibility' => array(),
+    'weight' => 100,
+  );
+  $block = \Drupal\block\Entity\Block::create($values);
+  $block->save();
+}

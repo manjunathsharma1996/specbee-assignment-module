@@ -1,0 +1,7 @@
+timezone.show_time_configuration:
+  path: '/admin/config/show-time'
+  defaults:
+    _form: '\Drupal\timezone\Form\TimeConfigForm'
+    _title: 'Time Configuration'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,4 @@
+services:
+  timezone.timeservice:
+    class: Drupal\timezone\TimeService
+    arguments: ['@config.factory']
