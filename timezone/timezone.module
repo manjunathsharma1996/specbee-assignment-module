@@ -28,4 +28,10 @@ function timezone_install() {
   );
   $block = \Drupal\block\Entity\Block::create($values);
   $block->save();
+
+  //Set the default configuration
+  $config = \Drupal::configFactory()->getEditable('timezone.settings');
+  $config->set('country', 'USA')->save();
+  $config->set('city', 'New York, NY')->save();
+  $config->set('timezone', 'America/New_York')->save();
 }
