@@ -17,9 +17,21 @@ class TimeService {
   public function getTimeZone(){
     $config = $this->getConfig();
     $country = $config->get('country');
-    $customTimezone = new \DateTimeZone('America/New_York');
+    $city = $config->get('city');
+    $timezone = $config->get('timezone');
+    $customTimezone = new \DateTimeZone($timezone);
     $currentTime = new \DateTime('now', $customTimezone);
-    $formattedTime = $currentTime->format('Y-m-d H:i:s');
-    return $formattedTime;
+    $formattedTime = $currentTime->format('h:i A');
+    $week_name = $currentTime->format('l');
+    $date = $currentTime->format('jS F Y');
+
+    $time_details = [];
+    $time_details['time'] = $formattedTime;
+    $time_details['week'] = $week_name;
+    $time_details['date'] = $date;
+    $time_details['country'] = $country;
+    $time_details['city'] = $city;
+
+    return $time_details;
   }
 }

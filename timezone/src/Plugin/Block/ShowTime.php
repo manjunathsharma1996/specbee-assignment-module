@@ -54,11 +54,15 @@ class ShowTime extends BlockBase implements ContainerFactoryPluginInterface{
     $time_service = $this->container->get('timezone.timeservice');
 
     // Use the service to perform tasks.
-    $result = $time_service->getTimeZone();
+    $time_details = $time_service->getTimeZone();
 
     return [
       '#theme' => 'show_time',
-      '#time' => $result
+      '#time' => $time_details['time'],
+      '#week_name' => $time_details['week'],
+      '#date' => $time_details['date'],
+      '#country' => $time_details['country'],
+      '#city' => $time_details['city'],
     ];
   }
 }

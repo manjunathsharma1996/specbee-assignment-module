@@ -9,7 +9,7 @@ use Drupal\block\BlockRepositoryInterface;
 function timezone_theme($existing, $type, $theme, $path) {
     return [
       'show_time' => [
-        'variables' => ['time' => NULL],
+        'variables' => ['time' => NULL, 'week_name' => NULL, 'date' => NULL, 'country' => NULL, 'city' => NULL],
       ],
     ];
 }
@@ -20,7 +20,7 @@ function timezone_install() {
     'plugin' => 'show_time',
     'region' => 'sidebar',
     'settings' => array(
-      'label' => 'Show Time',
+      'label' => '',
     ),
     'theme' => 'olivero',
     'visibility' => array(),
