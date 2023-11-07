@@ -63,6 +63,10 @@ class ShowTime extends BlockBase implements ContainerFactoryPluginInterface{
       '#date' => $time_details['date'],
       '#country' => $time_details['country'],
       '#city' => $time_details['city'],
+      '#cache' => [
+        'tags' => ['config:timezone.settings'],
+        'contexts' => ['route','time'],
+      ],
     ];
   }
 }

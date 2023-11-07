@@ -2,3 +2,9 @@ services:
   timezone.timeservice:
     class: Drupal\timezone\TimeService
     arguments: ['@config.factory']
+
+  cache_context.time:
+    class: Drupal\timezone\Cache\Context\TimeCacheContext
+    arguments: ['@config.factory']
+    tags:
+      - { name: cache.context}
