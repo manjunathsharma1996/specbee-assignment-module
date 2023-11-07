@@ -19,6 +19,6 @@ Install module as follows
 
 ```bash
   On installing, It enables the 'Show Time' block 
-  in 'content' region of 'olivero' theme 
+  in 'sidebar' region of 'olivero' theme 
 ```
     
